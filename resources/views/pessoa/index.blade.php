@@ -21,6 +21,11 @@
         <td>{{ $p->email }}</td>
         <td>
                 <a href="/pessoas/{{ $p->id }}/edit"> Editar</a>
+                <form action="/pessoas/{{ $p->id }}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type= "submit" value= "Exluir">
+                </form>
         </td>
     </tr>
     @endforeach
